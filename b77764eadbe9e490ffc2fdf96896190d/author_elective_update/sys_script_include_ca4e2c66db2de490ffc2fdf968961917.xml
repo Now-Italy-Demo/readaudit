@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_readaudit.gr2json</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description>Convert a Gliderecod to a Json string</description>
+        <name>gr2json</name>
+        <script><![CDATA[var gr2json = Class.create();
+gr2json.prototype = Object.extendsObject(global.JSON, {
+  encodeGr : function(o) {
+    var a = ["{"], b, i, v;
+
+    for (i in o) {
+        if(o.hasOwnProperty(i)) {
+            v = o[i].toString();
+
+            switch (typeof v) {
+                case "undefined":
+                case "function":
+                case "unknown":
+                     break;
+                default:
+                     if (b) {
+                         a.push(',');
+                     }
+                     a.push(this.encode(i), ":", v === null ? "null" : this.encode(v));
+                     b = true;
+            }
+        }
+    }
+
+    a.push("}");
+    return a.join("");
+  }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-09 14:44:05</sys_created_on>
+        <sys_id>ca4e2c66db2de490ffc2fdf968961917</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>gr2json</sys_name>
+        <sys_package display_value="ReadAudit" source="x_snc_readaudit">b77764eadbe9e490ffc2fdf96896190d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ReadAudit">b77764eadbe9e490ffc2fdf96896190d</sys_scope>
+        <sys_update_name>sys_script_include_ca4e2c66db2de490ffc2fdf968961917</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-09 16:30:19</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ReadAudit">b77764eadbe9e490ffc2fdf96896190d</application>
+        <file_path/>
+        <instance_id>6bc984a5dbdfd8d4566750b6f4961922</instance_id>
+        <instance_name>arizzsc1demo</instance_name>
+        <name>sys_script_include_ca4e2c66db2de490ffc2fdf968961917</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_snc_readaudit.gr2json&lt;/api_name&gt;&lt;caller_access&gt;1&lt;/caller_access&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;Convert a Gliderecod to a Json string&lt;/description&gt;&lt;name&gt;gr2json&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var gr2json = Class.create();
+gr2json.prototype = Object.extendsObject(global.JSON, {
+  encodeGr : function(o) {
+    var a = ["{"], b, i, v;
+
+    for (i in o) {
+        if(o.hasOwnProperty(i)) {
+            v = o[i].toString();
+
+            switch (typeof v) {
+                case "undefined":
+                case "function":
+                case "unknown":
+                     break;
+                default:
+                     if (b) {
+                         a.push(',');
+                     }
+                     a.push(this.encode(i), ":", v === null ? "null" : this.encode(v));
+                     b = true;
+            }
+        }
+    }
+
+    a.push("}");
+    return a.join("");
+  }
+});
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-01-09 14:44:05&lt;/sys_created_on&gt;&lt;sys_id&gt;ca4e2c66db2de490ffc2fdf968961917&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;gr2json&lt;/sys_name&gt;&lt;sys_package display_value="ReadAudit" source="x_snc_readaudit"&gt;b77764eadbe9e490ffc2fdf96896190d&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="ReadAudit"&gt;b77764eadbe9e490ffc2fdf96896190d&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_ca4e2c66db2de490ffc2fdf968961917&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-01-09 16:30:19&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>535923427</payload_hash>
+        <record_name>gr2json</record_name>
+        <reverted_from/>
+        <source>aadc2026db2de490ffc2fdf968961901</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-09 16:30:19</sys_created_on>
+        <sys_id>1117492adbade490ffc2fdf968961971</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>176e7fbfcc50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-09 16:30:19</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>9517492aabade490eb3b6dc4914a2470</update_guid>
+        <update_guid_history>9517492aabade490eb3b6dc4914a2470:535923427,d78689e6aeade490b3640f40bfc3f0e6:2130436808,c9ceaca6382de49062510f6f5f9f6efc:-1940222310</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-09 16:39:39</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>0b7e47cbccc94dec8e3d103839e4dee9</sys_id>
+        <sys_metadata>ca4e2c66db2de490ffc2fdf968961917</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>gr2json</sys_name>
+        <sys_package display_value="ReadAudit" source="x_snc_readaudit">b77764eadbe9e490ffc2fdf96896190d</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ReadAudit">b77764eadbe9e490ffc2fdf96896190d</sys_scope>
+        <sys_scope_delete display_value="">2b3a962547ab4e81a55ad0d4c589fc71</sys_scope_delete>
+        <sys_update_name>sys_script_include_ca4e2c66db2de490ffc2fdf968961917</sys_update_name>
+        <sys_update_version display_value="sys_script_include_ca4e2c66db2de490ffc2fdf968961917">1117492adbade490ffc2fdf968961971</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-09 16:39:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
