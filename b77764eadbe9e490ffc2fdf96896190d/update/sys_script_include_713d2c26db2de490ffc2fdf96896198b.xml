@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_readaudit.audit_log</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description>Write a new audit record</description>
+        <name>audit_log</name>
+        <script><![CDATA[var audit_log = Class.create();
+audit_log.prototype = {
+    initialize: function() {
+    },
+	
+	write: function(source, user, table, query, uri, message) {
+		
+			if( gs.getProperty('x_snc_readaudit.use_custom_log_table').toLowerCase() == 'true' ) {
+				var gr_log;
+
+				gr_log = new GlideRecord('x_snc_readaudit_readauditlog');
+				gr_log.initialize();
+				gr_log.setValue('query', query);
+				gr_log.setValue('user',  user);
+				gr_log.setValue('table', table);
+				gr_log.setValue('uri', uri);
+				gr_log.setValue('source', source);
+				gr_log.setValue('message', message);
+				gr_log.insert();
+			}
+			else {
+				gs.info(message);
+			}
+		
+	},
+
+    type: 'audit_log'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-09 14:40:00</sys_created_on>
+        <sys_id>713d2c26db2de490ffc2fdf96896198b</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>audit_log</sys_name>
+        <sys_package display_value="ReadAudit" source="x_snc_readaudit">b77764eadbe9e490ffc2fdf96896190d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ReadAudit">b77764eadbe9e490ffc2fdf96896190d</sys_scope>
+        <sys_update_name>sys_script_include_713d2c26db2de490ffc2fdf96896198b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-09 17:09:51</sys_updated_on>
+    </sys_script_include>
+</record_update>
