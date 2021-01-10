@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Read Audit">581a69b2db296890ffc2fdf96896196f</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Read Audit Data</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_snc_readaudit_readauditlog</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query>&amp;sysparm_order=sys_created_on&amp;sysparm_order_direction=desc</query>
+        <report/>
+        <roles>x_snc_readaudit.admin,x_snc_readaudit.readauditlog_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-10 13:43:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>895ae5b2db296890ffc2fdf968961914</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Read Audit Data</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ReadAudit" source="x_snc_readaudit">b77764eadbe9e490ffc2fdf96896190d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ReadAudit">b77764eadbe9e490ffc2fdf96896190d</sys_scope>
+        <sys_update_name>sys_app_module_895ae5b2db296890ffc2fdf968961914</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-10 13:46:16</sys_updated_on>
+        <timeline_page/>
+        <title>Read Audit Data</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>
