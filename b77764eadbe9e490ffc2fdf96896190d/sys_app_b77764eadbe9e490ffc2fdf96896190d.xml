@@ -18,7 +18,7 @@
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>x_snc_readaudit</scope>
-        <scoped_administration>true</scoped_administration>
+        <scoped_administration>false</scoped_administration>
         <short_description>Audit data read from selected tables. The application has scoped administration. Logon with user readaudit_admin and initial password: "password".</short_description>
         <source>x_snc_readaudit</source>
         <store_correlation_id/>
